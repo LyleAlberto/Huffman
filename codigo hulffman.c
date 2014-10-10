@@ -1,12 +1,14 @@
 #include <stdio.h>
-#define MAX = 99999
+
 int main()
 {
 
-    char letras[MAX];
+    char letras[9999];
+    //nansnsss
+    //lsoskkskj
     int i,j=0;
     printf("digite la oracion\n");
-    for(i=0;i<MAX;i++)
+    for(i=0;i<9999;i++)
     {
         scanf("%c",&letras[i]);
         j++;
