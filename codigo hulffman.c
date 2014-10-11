@@ -1,19 +1,54 @@
+
 #include <stdio.h>
+#include <stdlib.h>
+#define max 16
+int imprime();
+int cargar();
+int frecu(); 
+
+int frecuencias[max];
+char letras[max];
 
 int main()
 {
-
-    char letras[9999];// vector de tipo aracter
-    int i,j=0;//variables enteras contadores
+    int i,j=0,con=0;
+    printf("programa para codificar oracion\n\n-------------------------------------\n\n");
+    
     printf("digite la oracion\n");
-    for(i=0;i<9999;i++)
+    cargar();
+    printf("las frecuencias por cada letra son\n");
+    frecu();
+    imprime();
+	printf("la oracion es:\n");
+     for(i=0;i<max;i++)
     {
-        scanf("%c",&letras[i]);
-        j++;
+        printf("%c ",letras[i]);
     }
-    for(i=0;i<j;i++)
+    
+}
+int imprime()
+{ int i;
+for(i=0;i<max;i++)
     {
-        printf("%c\n",letras[i]);
+        printf("%d ",frecuencias[i]);
     }
 }
 
+int cargar()
+{int i;
+	for(i=0;i<max;i++)
+    {
+        scanf("%c",&letras[i]);
+    }
+} 
+int frecu()
+{int i,j,con=0;
+	for(i=0;i<max;i++)
+    {
+    	for(j=0;j<max;j++)
+    	{
+    		if(letras[i]==letras[j]){con++;frecuencias[i]=con;}
+    	}
+    	con=0;
+    }
+}
